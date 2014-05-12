@@ -1,22 +1,18 @@
-# node-litecoin
+# node-blackcoin
 
-node-litecoin is a simple wrapper for the litecoin client's JSON-RPC API.
-
-The API is equivalent to the API document [here](https://litecoin.info/Litecoin_API).
-The methods are exposed as lower camelcase methods on the `litecoin.Client`
-object, or you may call the API directly using the `cmd` method.
+node-blackcoin is a simple wrapper for the blackcoin client's JSON-RPC API.
 
 ## Install
 
-`npm install node-litecoin`
+`npm install node-blackcoin`
 
 ## Examples
 
 ### Create client
 ```js
-var client = new litecoin.Client({
+var client = new blackcoin.Client({
   host: 'localhost',
-  port: 8332,
+  port: 15715,
   user: 'username',
   pass: 'password'
 });
@@ -58,20 +54,20 @@ client.cmd(batch, function(err, address) {
 ## SSL
 See [Enabling SSL on original client](https://en.bitcoin.it/wiki/Enabling_SSL_on_original_client_daemon).
 
-If you're using this to connect to litecoind across a network it is highly
+If you're using this to connect to blackcoind across a network it is highly
 recommended to enable `ssl`, otherwise an attacker may intercept your RPC credentials
-resulting in theft of your litecoins.
+resulting in theft of your blackcoins.
 
 When enabling `ssl` by setting the configuration option to `true`, the `sslStrict`
 option (verifies the server certificate) will also be enabled by default. It is 
-highly recommended to specify the `sslCa` as well, even if your litecoind has
+highly recommended to specify the `sslCa` as well, even if your blackcoind has
 a certificate signed by an actual CA, to ensure you are connecting
-to your own litecoind.
+to your own blackcoind.
 
 ```js
-var client = new litecoin.Client({
+var client = new blackcoin.Client({
   host: 'localhost',
-  port: 8332,
+  port: 15715,
   user: 'username',
   pass: 'password',
   ssl: true,
