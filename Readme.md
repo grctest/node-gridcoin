@@ -1,16 +1,16 @@
-# node-blackcoin
+# node-gridcoin
 
-node-blackcoin is a simple wrapper for the blackcoin client's JSON-RPC API.
+node-gridcoin is a simple wrapper for the gridcoin client's JSON-RPC API.
 
 ## Install
 
-`npm install node-blackcoin`
+`npm install node-gridcoin`
 
 ## Examples
 
 ### Create client
 ```js
-var client = new blackcoin.Client({
+var client = new gridcoin.Client({
   host: 'localhost',
   port: 15715,
   user: 'username',
@@ -54,18 +54,18 @@ client.cmd(batch, function(err, address) {
 ## SSL
 See [Enabling SSL on original client](https://en.bitcoin.it/wiki/Enabling_SSL_on_original_client_daemon).
 
-If you're using this to connect to blackcoind across a network it is highly
+If you're using this to connect to gridcoind across a network it is highly
 recommended to enable `ssl`, otherwise an attacker may intercept your RPC credentials
-resulting in theft of your blackcoins.
+resulting in theft of your gridcoins.
 
 When enabling `ssl` by setting the configuration option to `true`, the `sslStrict`
 option (verifies the server certificate) will also be enabled by default. It is 
-highly recommended to specify the `sslCa` as well, even if your blackcoind has
+highly recommended to specify the `sslCa` as well, even if your gridcoind has
 a certificate signed by an actual CA, to ensure you are connecting
-to your own blackcoind.
+to your own gridcoind.
 
 ```js
-var client = new blackcoin.Client({
+var client = new gridcoin.Client({
   host: 'localhost',
   port: 15715,
   user: 'username',

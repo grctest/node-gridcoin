@@ -1,7 +1,7 @@
 
-var blackcoin = require('./lib');
+var gridcoin = require('./lib');
 
-var client = new blackcoin.Client({
+var client = new gridcoin.Client({
   host: 'localhost',
   port: 15715,
   user: 'yourusername',

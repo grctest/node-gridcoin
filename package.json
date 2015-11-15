@@ -1,19 +1,19 @@
 {
-  "name": "node-blackcoin",
-  "description": "Communicate with blackcoind via JSON-RPC",
+  "name": "node-gridcoin",
+  "description": "Communicate with gridcoind via JSON-RPC",
   "version": "1.0.2",
   "main": "lib/index.js",
   "keywords": [
-    "blackcoin",
+    "gridcoin",
     "rpc"
   ],
-  "author": "Dumitru Glavan <contact@dumitruglavan.com>",
+  "author": "GRCnode <grctestemail@gmail.com>",
   "dependencies": {
     "deprecate": "~0.1.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/doomhz/node-blackcoin.git"
+    "url": "git://github.com/grctest/node-gridcoin.git"
   },
   "engines": {
     "node": ">= 0.8.0"
