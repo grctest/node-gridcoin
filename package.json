@@ -1,13 +1,13 @@
 {
   "name": "node-gridcoin",
   "description": "Communicate with gridcoind via JSON-RPC",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "lib/index.js",
   "keywords": [
     "gridcoin",
     "rpc"
   ],
-  "author": "GRCnode <grctestemail@gmail.com>",
+  "author": "grctest <nftea.gallery@gmail.com>",
   "dependencies": {
     "deprecate": "~0.1.0"
   },

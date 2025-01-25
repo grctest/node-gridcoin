@@ -4,7 +4,7 @@ node-gridcoin is a simple wrapper for the gridcoin client's JSON-RPC API.
 
 ## Install
 
-`npm install node-gridcoin`
+`npm install https://github.com/grctest/node-gridcoin.git`
 
 ## Examples
 
@@ -18,37 +18,17 @@ var client = new gridcoin.Client({
 });
 ```
 
-### Get balance across all accounts with minimum confirmations of 6
+### Get latest block
 
 ```js
-client.getBalance('*', 6, function(err, balance) {
-  if (err) return console.log(err);
-  console.log('Balance:', balance);
-});
+const latestBlock = await client.cmd('getblockcount');
+console.log('Latest Block:', latestBlock);
 ```
-### Getting the balance directly using `cmd`
+### Get block by number
 
 ```js
-client.cmd('getbalance', '*', 6, function(err, balance){
-  if (err) return console.log(err);
-  console.log('Balance:', balance);
-});
-```
-
-### Batch multiple RPC calls into single HTTP request
-
-```js
-var batch = [];
-for (var i = 0; i < 10; ++i) {
-  batch.push({
-    method: 'getnewaddress',
-    params: ['myaccount']
-  });
-}
-client.cmd(batch, function(err, address) {
-  if (err) return console.log(err);
-  console.log('Address:', address);
-});
+const blockDetails = await client.cmd('getblockbynumber', latestBlock);
+console.log('Block Details:', blockDetails);
 ```
 
 ## SSL
@@ -68,8 +48,8 @@ to your own gridcoind.
 var client = new gridcoin.Client({
   host: 'localhost',
   port: 15715,
-  user: 'username',
-  pass: 'password',
+  user: 'rpc_user',
+  pass: 'rpc_password',
   ssl: true,
   sslStrict: true,
   sslCa: fs.readFileSync(__dirname + '/server.cert')
